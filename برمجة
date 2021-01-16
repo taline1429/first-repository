@@ -1,0 +1,15 @@
+print("اختر اللغة الذي تريد تعلمها")
+print("css,html,js")
+i = input()
+c = 'css'
+h = 'html'
+j = 'js'
+if i == c:
+    print('https://youtu.be/BMHAKuY2RNE')
+    print("المدة:8:21:43")
+if i == h:
+    print('https://youtu.be/WKmT2vFaKXk')
+    print("المدة:2:49:6")
+if i == j:
+    print('https://youtu.be/1XqUCUJgATU')
+    print("المدة:11:12:5")
