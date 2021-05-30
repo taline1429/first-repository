@@ -1,0 +1,171 @@
+#####################################################################
+# Window Edit #
+from tkinter import *
+w = Tk()
+w.title('TKINTER')
+w.geometry('600x600')
+w.minsize(600, 600)
+w.configure(bg='#924444')
+w.resizable(False, False)
+#####################################################################
+# Functions #
+result = StringVar()
+number1 = StringVar()
+number2 = StringVar()
+
+
+def add_plus():
+    result.set('+')
+
+
+def add_min():
+    result.set('-')
+
+
+def add_multiplied():
+    result.set('×')
+
+
+def add_div():
+    result.set('÷')
+
+
+def result_():
+    if result.get() == '+':
+        result.set(int(number1.get()) + int(number2.get()))
+        number1.set('')
+        number2.set('')
+    if result.get() == '-':
+        result.set(int(number1.get()) - int(number2.get()))
+        number1.set('')
+        number2.set('')
+    if result.get() == '×':
+        result.set(int(number1.get()) * int(number2.get()))
+        number1.set('')
+        number2.set('')
+    if result.get() == '÷':
+        result.set(int(number1.get()) // int(number2.get()))
+        number1.set('')
+        number2.set('')
+
+
+#####################################################################
+# Labels #
+
+lbl1 = Label(w,
+             bg='#924444',
+             text='number1:',
+             fg='black',
+             font=('normal', 20, 'bold'),
+             bd=0,
+             width=0,
+             relief=FLAT
+             )
+lbl1.place(x=30, y=99)
+
+lbl2 = Label(w,
+             bg='#924444',
+             text='number2:',
+             fg='black',
+             font=('normal', 20, 'bold'),
+             bd=0,
+             width=0,
+             relief=FLAT
+             )
+lbl2.place(x=30, y=220)
+
+lbl3 = Label(w,
+             bg='#924444',
+             text='The result:',
+             fg='black',
+             font=('normal', 20, 'bold'),
+             bd=0,
+             width=0,
+             relief=FLAT
+             )
+lbl3.place(x=30, y=400)
+#####################################################################
+# Entry #
+lbl = Label(w)
+fnt = ('normal', 16, 'bold')
+txt = Entry(w, textvariable=number1)
+txt.config(font=fnt)
+txt.place(x=190, y=100)
+
+lbl2 = Label(w)
+fnt = ('normal', 16, 'bold')
+txt2 = Entry(w, textvariable=number2)
+txt2.config(font=fnt)
+txt2.place(x=190, y=220)
+
+lbl3 = Label(w)
+fnt = ('normal', 16, 'bold')
+txt3 = Entry(w, textvariable=result)
+txt3.config(font=fnt)
+txt3.place(x=190, y=400)
+
+
+#####################################################################
+# Buttons #
+btn1 = Button(w,
+              bg='white',
+              text='+',
+              width=3,
+              bd=2,
+              fg='black',
+              font=('normal', 16, 'bold'),
+              relief=FLAT,
+              command=add_plus
+              )
+btn1.place(x=210, y=300)
+
+btn2 = Button(w,
+              bg='white',
+              text='-',
+              width=3,
+              bd=2,
+              fg='black',
+              font=('normal', 16, 'bold'),
+              relief=FLAT,
+              command=add_min
+              )
+btn2.place(x=260, y=300)
+
+btn3 = Button(w,
+              bg='white',
+              text='×',
+              width=3,
+              bd=2,
+              fg='black',
+              font=('normal', 16, 'bold'),
+              relief=FLAT,
+              command=add_multiplied
+              )
+btn3.place(x=310, y=300)
+
+btn4 = Button(w,
+              bg='white',
+              text='÷',
+              width=3,
+              bd=2,
+              fg='black',
+              font=('normal', 16, 'bold'),
+              relief=FLAT,
+              command=add_div
+              )
+btn4.place(x=360, y=300)
+
+btn5 = Button(w,
+              bg='white',
+              text='Restart',
+              width=0,
+              bd=2,
+              fg='black',
+              font=('normal', 16, 'bold'),
+              relief=FLAT,
+              command=result_
+              )
+btn5.place(x=250, y=500)
+
+#####################################################################
+w.mainloop()
