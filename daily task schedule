@@ -1,0 +1,114 @@
+##################################################################################################
+# Tkinter #
+from tkinter import *
+root = Tk()
+root.title('TEST')
+root.geometry('690x600')
+root.minsize(600, 600)
+root.configure(bg='#414141')
+root.resizable(False, False)
+##################################################################################################
+# Functions #
+
+
+def Retreat_(event=None):
+    txt1.config(bg='white'),
+    txt2.config(bg='white'),
+    txt3.config(bg='white')
+
+
+def txt1_(event=None):
+     txt1.config(bg='red')
+
+
+def txt2_(event=None):
+    txt2.config(bg='red')
+
+
+def txt3_(event=None):
+    txt3.config(bg='red')
+
+
+def text1_(event=None):
+    txt1.config(bg='green')
+
+
+def text2_(event=None):
+    txt2.config(bg='green')
+
+
+def text3_(event=None):
+    txt3.config(bg='green')
+##################################################################################################
+# Labels #
+
+
+lbl1 = Label(root,
+             text='Enter three of your daily tasks',
+             bg='#414141',
+             font=('Times New Roman', 16, 'bold'),
+             fg='white',
+             
+             )
+lbl1.pack()
+###################################################################################################
+# Buttons #
+
+
+Button(root,
+       text='Retreat',
+       command=Retreat_,
+       font=('Times New Roman', 16, 'bold')).place(x=260, y=290)
+
+
+Button(root,
+       text='completed',
+       command=text2_,
+       font=('Times New Roman', 12, 'bold')).place(x=430, y=170)
+
+
+Button(root,
+       text='completed',
+       command=text3_,
+       font=('Times New Roman', 12, 'bold')).place(x=430, y=100)
+
+
+Button(root,
+       text='completed',
+       command=text1_,
+       font=('Times New Roman', 12, 'bold')).place(x=430, y=230)
+
+
+Button(root,
+       text='not completed',
+       command=txt1_,
+       font=('Times New Roman', 12, 'bold')).place(x=520, y=230)
+
+Button(root,
+       text='not completed',
+       command=txt3_,
+       font=('Times New Roman', 12, 'bold')).place(x=520, y=100)
+
+Button(root,
+       text='not completed',
+       command=txt2_,
+       font=('Times New Roman', 12, 'bold')).place(x=520, y=170)
+##################################################################################################
+# Entries  x=430, y=220 #
+
+txt1 = Entry(root, font=('Times New Roman', 16, 'bold'), width=20)
+txt1.place(x=190, y=230)
+txt1.focus()
+
+
+txt2 = Entry(root, font=('Times New Roman', 16, 'bold'), width=20)
+txt2.place(x=190, y=170)
+txt2.focus()
+
+txt3 = Entry(root, font=('Times New Roman', 16, 'bold'), width=20)
+txt3.place(x=190, y=100)
+txt3.focus()
+##################################################################################################
+# The End #
+root.mainloop()
+################
